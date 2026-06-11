@@ -365,8 +365,8 @@ function update(dt) {
   }
 
   // --- flag (level complete) ---
-  if (flag && Math.abs(flag.c * T + T / 2 - p.x) < 36 &&
-      p.y > flag.r * T - T && p.y - p.h < (flag.r + 1) * T) {
+  if (flag && Math.abs(flag.c * T + T / 2 - p.x) < 44 &&
+      p.y > flag.r * T - T * 1.5 && p.y - p.h < (flag.r + 1) * T) {
     levelComplete();
   }
 
