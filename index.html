@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Musa's Star Adventure</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gameWrap">
+  <canvas id="game" width="960" height="540"></canvas>
+
+  <!-- HUD (shown while playing) -->
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <span id="hearts">❤️❤️❤️</span>
+      <span class="hud-chip">🪙 <b id="coinCount">0</b></span>
+      <span class="hud-chip" id="starSlots">☆☆☆</span>
+    </div>
+    <div class="hud-right">
+      <span id="levelName" class="hud-chip"></span>
+      <button id="btnMusic" class="hud-btn" title="Music on/off">🎵</button>
+      <button id="btnPause" class="hud-btn" title="Pause">⏸️</button>
+    </div>
+  </div>
+
+  <!-- Title screen -->
+  <div id="titleScreen" class="screen">
+    <h1 class="game-title">Musa's<br>Star Adventure</h1>
+    <p class="subtitle">A hero is born! ⭐</p>
+    <button id="btnPlay" class="big-btn">▶ Play!</button>
+    <p class="controls-hint">⬅️ ➡️ move &nbsp;•&nbsp; ⬆️ or SPACE to jump</p>
+  </div>
+
+  <!-- Level select -->
+  <div id="levelSelect" class="screen hidden">
+    <h2 class="select-title">Choose a Level</h2>
+    <div id="worldList"></div>
+    <button id="btnBackTitle" class="small-btn">← Back</button>
+  </div>
+
+  <!-- Pause -->
+  <div id="pauseScreen" class="screen overlay hidden">
+    <h2>Paused</h2>
+    <button id="btnResume" class="big-btn">▶ Keep Going!</button>
+    <button id="btnQuitLevel" class="small-btn">🗺️ Back to Map</button>
+  </div>
+
+  <!-- Ouch / respawn -->
+  <div id="ouchScreen" class="screen overlay hidden">
+    <h2 id="ouchMsg">Almost! Try again, Musa! 💪</h2>
+  </div>
+
+  <!-- Level complete -->
+  <div id="completeScreen" class="screen overlay hidden">
+    <h2 id="completeTitle">Level Complete! 🎉</h2>
+    <div id="completeStars" class="big-stars">⭐⭐⭐</div>
+    <p id="completeMsg"></p>
+    <button id="btnNext" class="big-btn">Next Level ➡</button>
+    <button id="btnMap" class="small-btn">🗺️ Map</button>
+  </div>
+
+  <!-- Game complete -->
+  <div id="winScreen" class="screen hidden">
+    <h1 class="game-title">YOU DID IT,<br>MUSA! 🏆</h1>
+    <p class="subtitle">You are a true Star Hero! ⭐⭐⭐</p>
+    <p id="winStats"></p>
+    <button id="btnWinMap" class="big-btn">🗺️ Play More</button>
+  </div>
+
+  <!-- Touch controls -->
+  <div id="touchControls" class="hidden">
+    <div class="touch-left">
+      <button id="tLeft" class="touch-btn">◀</button>
+      <button id="tRight" class="touch-btn">▶</button>
+    </div>
+    <div class="touch-right">
+      <button id="tJump" class="touch-btn touch-jump">⬆</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/audio.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
